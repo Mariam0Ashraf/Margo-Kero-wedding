@@ -176,7 +176,7 @@ html[dir="rtl"] .lang-en{display:none}
 
 /* DETAILS */
 .details{margin-top:56px}
-.detail-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.detail-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px}
 .detail-card{background:var(--card); border:1px solid var(--card-border); border-radius:12px;
   padding:26px 20px; text-align:center; box-shadow:var(--shadow)}
 .dc-icon{color:var(--primary); display:flex; justify-content:center; margin-bottom:10px}
