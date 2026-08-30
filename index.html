@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kerollos & Margret — Wedding Invitation</title>
+  <meta name="description" content="You are cordially invited to the wedding of Kerollos & Margret." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Marcellus&family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- ============ FLOATING CONTROLS ============ -->
+  <div class="fixed-controls">
+    <button id="langToggle" class="ctrl-btn" aria-label="Switch language">
+      <span class="lang-en">العربية</span><span class="lang-ar">English</span>
+    </button>
+    <button id="musicToggle" class="ctrl-btn music-btn" aria-label="Toggle music" aria-pressed="false">
+      <svg class="ic-music" viewBox="0 0 24 24" width="18" height="18"><path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span class="eq"><i></i><i></i><i></i><i></i></span>
+    </button>
+  </div>
+
+  <audio id="bgAudio" loop preload="none">
+    <source src="https://vwredvbofimsiasaheet.supabase.co/storage/v1/object/public/invitation-assets/5d440130-0eb2-4746-8550-d704dabb8ef6/audio-1781900651051.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ============ OPENING COVER ============ -->
+  <section id="cover" class="cover">
+    <div class="cover-garden">
+      <div class="leaf-layer"></div>
+      <div class="petals" id="coverPetals"></div>
+    </div>
+    <div class="cover-inner">
+      <div class="cover-monogram" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="96" height="96"><path d="M60 108C34 88 14 70 14 46 14 30 26 20 40 20c9 0 16 5 20 12 4-7 11-12 20-12 14 0 26 10 26 26 0 24-20 42-46 62Z" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      </div>
+      <p class="cover-kicker" data-en="THE WEDDING OF" data-ar="حفل زفاف">THE WEDDING OF</p>
+      <h1 class="cover-names">Kerollos <span class="amp">&amp;</span> Margret</h1>
+      <p class="cover-sub" data-en="You are cordially invited" data-ar="يشرفنا دعوتكم">You are cordially invited</p>
+      <button id="openBtn" class="open-btn">
+        <span data-en="Open Invitation" data-ar="افتح الدعوة">Open Invitation</span>
+      </button>
+    </div>
+    <div class="cover-vignette"></div>
+  </section>
+
+  <!-- ============ MAIN INVITATION ============ -->
+  <main id="invite" class="invite" aria-hidden="true">
+
+    <!-- HERO -->
+    <header class="hero section-reveal">
+      <div class="corner tl"></div><div class="corner tr"></div>
+      <div class="corner bl"></div><div class="corner br"></div>
+
+      <div class="doves" aria-hidden="true">
+        <svg class="dove dove-l" viewBox="0 0 64 40" width="70"><path d="M2 30c10-2 16-8 22-16 3 8 10 14 20 14-6 6-16 8-24 6 4 4 10 5 16 4-8 6-22 6-34-2 4 0 8-2 10-6-4 2-8 2-10 0Z" fill="currentColor"/></svg>
+        <span class="cross" aria-hidden="true">
+          <svg viewBox="0 0 24 40" width="20"><path d="M12 2v36M4 12h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <svg class="dove dove-r" viewBox="0 0 64 40" width="70"><path d="M2 30c10-2 16-8 22-16 3 8 10 14 20 14-6 6-16 8-24 6 4 4 10 5 16 4-8 6-22 6-34-2 4 0 8-2 10-6-4 2-8 2-10 0Z" fill="currentColor"/></svg>
+      </div>
+
+      <p class="kicker" data-en="TOGETHER WITH THEIR FAMILIES" data-ar="بنعمة الله وبركته">TOGETHER WITH THEIR FAMILIES</p>
+      <h1 class="names">Kerollos</h1>
+      <div class="amp-row"><span class="rule"></span><span class="amp">&amp;</span><span class="rule"></span></div>
+      <h1 class="names">Margret</h1>
+      <p class="hero-line" data-en="request the pleasure of your company" data-ar="يتشرفان بدعوتكم لحضور حفل زفافهما">request the pleasure of your company</p>
+      <p class="hero-date" data-en="Thursday · 3 September 2026 · 7:00 PM" data-ar="الخميس · ٣ سبتمبر ٢٠٢٦ · ٧:٠٠ مساءً">Thursday · 3 September 2026 · 7:00 PM</p>
+    </header>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown section-reveal">
+      <p class="sec-title" data-en="Counting down to our big day" data-ar="العد التنازلي ليومنا الكبير">Counting down to our big day</p>
+      <div class="cd-grid" id="countdown">
+        <div class="cd-cell"><span class="cd-num" id="cd-days">00</span><span class="cd-label" data-en="Days" data-ar="يوم">Days</span></div>
+        <div class="cd-cell"><span class="cd-num" id="cd-hours">00</span><span class="cd-label" data-en="Hours" data-ar="ساعة">Hours</span></div>
+        <div class="cd-cell"><span class="cd-num" id="cd-mins">00</span><span class="cd-label" data-en="Minutes" data-ar="دقيقة">Minutes</span></div>
+        <div class="cd-cell"><span class="cd-num" id="cd-secs">00</span><span class="cd-label" data-en="Seconds" data-ar="ثانية">Seconds</span></div>
+      </div>
+    </section>
+
+    <!-- MESSAGE -->
+    <section class="message section-reveal">
+      <div class="ornament">✝</div>
+      <p class="msg-text" data-en="We are happy to share our special day with you, and we would be honoured by your presence and blessing."
+         data-ar="يسعدنا أن نشارككم يومنا المميز، ويشرّفنا حضوركم ومباركتكم.">
+         We are happy to share our special day with you, and we would be honoured by your presence and blessing.
+      </p>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section class="details section-reveal">
+      <p class="sec-title" data-en="Wedding Details" data-ar="تفاصيل الحفل">Wedding Details</p>
+      <div class="detail-cards">
+        <div class="detail-card">
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24" width="26"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-en="When" data-ar="الموعد">When</h3>
+          <p data-en="Thursday, 3 September 2026" data-ar="الخميس، ٣ سبتمبر ٢٠٢٦">Thursday, 3 September 2026</p>
+          <p data-en="7:00 PM" data-ar="٧:٠٠ مساءً">7:00 PM</p>
+        </div>
+        <div class="detail-card">
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24" width="26"><path d="M12 21c5-5 7-8.5 7-12a7 7 0 1 0-14 0c0 3.5 2 7 7 12Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="9" r="2.6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+          </div>
+          <h3 data-en="Where" data-ar="المكان">Where</h3>
+          <p class="venue-name">St. Mary Church</p>
+          <p data-en="Diocese of Beni Suef" data-ar="إيبارشية بني سويف">Diocese of Beni Suef</p>
+          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=St+Mary+Church+Diocese+of+Beni+Suef" target="_blank" rel="noopener">
+            <span data-en="Open in Maps" data-ar="افتح الخريطة">Open in Maps</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="foot section-reveal">
+      <div class="foot-hearts">Kerollos <span class="amp">&amp;</span> Margret</div>
+      <p class="foot-date" data-en="03 · 09 · 2026" data-ar="٠٣ · ٠٩ · ٢٠٢٦">03 · 09 · 2026</p>
+      <p class="foot-tag" data-en="With love, we can't wait to see you" data-ar="بكل حب، ننتظر حضوركم">With love, we can't wait to see you</p>
+    </footer>
+  </main>
+
+  <div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
